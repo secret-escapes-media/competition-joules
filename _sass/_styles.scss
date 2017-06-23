@@ -1,0 +1,200 @@
+// all custom styles for the site
+
+
+// ---------- Section styles ----------
+
+.invert-text { color: $white; }
+.bg {
+  &--white      { background-color: $white; }
+  &--black      { background-color: $black; }
+  &--light-grey { background-color: $light-grey; }
+  &--dark-grey  { background-color: $dark-grey; }
+  &--text-black     { background-color: $text-black; }
+  &--text-heading   { background-color: $text-heading; }
+  &--text-paragraph { background-color: $text-paragraph; }
+  &--se-orange     { background-color: $se-orange; }
+  &--se-light-grey { background-color: $se-light-grey; }
+  &--se-dark-grey  { background-color: $se-dark-grey; }
+  &--partner-primary   { background-color: $partner-primary; }
+  &--partner-secondary { background-color: $partner-secondary; }
+}
+
+// ---------- button ----------
+
+.btn {
+  @include transition;
+  display:inline-block;
+  padding: .5em 1.5em;
+  border: 1px solid $partner-primary;
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+  &:hover {
+    color: white;
+    background-color: $partner-primary;
+    text-decoration: none;
+  }
+  * + & { margin-top: 1em; }
+
+  &--solid {
+    color: white;
+    border: 0;
+    background-color: $partner-primary;
+    &:hover { background-color: darken($partner-primary, 10); }
+   }
+  &--large { font-size: 1.2em; padding: .5em 3em; }
+}
+
+
+// ---------- Section styles ----------
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: $z-background;
+  background: $se-dark-grey center no-repeat;
+  background-image: url('../img/bg/bg.jpg');
+  background-size: cover;
+}
+
+.logos {
+  > * {
+    vertical-align: middle;
+    line-height: 0;
+  }
+}
+
+.logo {
+  padding: 1em;
+  @include bp(medium){
+    padding: 1.25em 1.5em;
+  }
+  @include bp(xxxlarge){
+    padding: 1.5em 2.2em;
+  }
+  & + & {
+    border-left: 1px solid $white-25;
+  }
+}
+
+.intro {
+  height: 600px;
+  padding-top: 50px;
+  color: $white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .flexbox & {
+    display: flex;
+    justify-content: flex-start;
+    height: 70%;
+    padding-top: 0;
+  }
+}
+
+.page {
+  padding: $margin 0;
+  background-color: $white;
+  box-shadow: 0px 0px 42.4px 10.6px rgba(0, 0, 0, 0.1);
+  @include bp(large){
+    padding: ($margin*1.2) 0;
+  }
+  @include bp(xxlarge){
+    margin-bottom: ($margin*2);
+  }
+  @include bp(xxxlarge){
+    border-radius: 4px;
+  }
+}
+
+.form {
+  margin-top: 1.2em;
+  border: solid 1px #e8e6e3;
+  background: #fff url('../img/icons/loading.gif') center no-repeat;
+  background-size: 16px;
+  overflow: hidden;
+}
+
+
+// ---------- enter-bar ----------
+
+.enter-bar {
+  display: none;
+  @include bp(large){
+    @include transition();
+    position: fixed;
+    bottom: -100px;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    background-color: $black-85;
+    &.active {
+      bottom: 0;
+    }
+  }
+}
+
+
+// ---------- minium height for header ----------
+
+@media (max-height:650px) {
+  .intro,
+  .flexbox .intro {
+    height: 550px;
+    padding-top: 25px;
+  }
+  .background,
+  .flexbox .background {
+    height: 650px;
+  }
+}
+
+
+// ---------- logos ----------
+
+.logo {
+  display: inline-block;
+  &--secret-escapes{
+    margin-top: 4px;
+    > img {
+      max-width: 80px;
+      @include bp(medium){ max-width: 120px; }
+      @include bp(xxxlarge){ max-width: 140px; }
+    }
+  }
+  &--partner{
+    > img {
+      max-width: 55px;
+      @include bp(medium){ max-width: 90px; }
+      @include bp(xxxlarge){ max-width: 100px; }
+    }
+  }
+}
+
+
+// ---------- prize number ----------
+
+.prize {
+  &__number {
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: $black-85;
+    color: #ffffff;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    font-family: 'Cormorant Garamond';
+    line-height: 100%;
+    vertical-align: middle;
+    padding: 12px 0;
+    font-size: 1.4em;
+    & .num { font-size: 3em; }
+  }
+}
