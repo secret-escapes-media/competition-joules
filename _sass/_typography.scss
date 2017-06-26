@@ -5,7 +5,7 @@
 
 $core-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 $main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-$title-font-family: 'Cormorant Garamond',Garamond,'Times New Roman',serif;
+$title-font-family: Futura, Futura-Medium, 'Futura Medium', 'Century Gothic', CenturyGothic, 'Apple Gothic', AppleGothic, 'URW Gothic L', 'Avant Garde', sans-serif;
 
 html { font-size:62.5%; }
 body,
@@ -23,7 +23,8 @@ input, textarea, keygen, select, button {
 
 .title {
   font-family: $title-font-family;
-  line-height: 1.15;
+  line-height: 1.2;
+  color: $text-heading;
   + * { margin-top: .5em; }
 
   &--spacing {
@@ -65,18 +66,42 @@ input, textarea, keygen, select, button {
     &--small       { font-size: 2.467em; }
     &--smaller     { font-size: 2.25em; }
   }
+
+
+
+  // STYLISTIC
+  &--lined {
+    display: inline-block;
+    position: relative;
+    &:before, &:after {
+      content: "";
+      width: 60px; height: 4px;
+      margin: 0 0.5em;
+      position: absolute;
+      top: 50%; margin-top: -2px;
+      background-image: url('../img/content/line.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &:before { right: 100%; }
+    &:after { left: 100%; }
+  }
+
 }
 
-.paragraph {
+.p {
+  &--bold { font-weight: 600; }
   &--lead {
     font-size: 1.1em;
-    line-height: 1.55;
-    font-weight: 200;
+    line-height: 1.5;
   }
-  &--large { font-size: 1.05em; }
+  &--large {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
   @include bp(large){
-    &--lead { font-size: 1.267em; }
-    &--large { font-size: 1.2em; }
+    &--lead { font-size: 1.18em; line-height: 1.6; }
+    &--large { font-size: 1.267em; line-height: 1.6; }
   }
 }
 
@@ -84,7 +109,7 @@ input, textarea, keygen, select, button {
 // -------- general content styles --------
 
 p             {
-  max-width: 720px;
+  max-width: 760px;
   &.align-center,
   .align-center & { margin-left: auto; margin-right: auto; }
 }
@@ -101,6 +126,14 @@ strong        { font-weight: 800; }
 hr {
   border: 0;
   height: 1px;
-  background-color: $light-grey;
-  margin: $margin 0;
+  background-color: $joules-blue;
+  margin-top: $margin/2;
+  margin-bottom: $margin/2;
+}
+.hr {
+  &--center { width: 100px; margin-left: auto; margin-right: auto; }
+  &--margin {
+    margin-top: $margin;
+    margin-bottom: $margin;
+  }
 }

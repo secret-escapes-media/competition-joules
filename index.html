@@ -1,53 +1,128 @@
 ---
 layout: default
-title: win the competition lorem ipsum dolor sit amet consectetur adipisicing elit
-nav-order: 1
+title: Design a lunchbox and win a family holiday!
+
+
+
+intro: >
+  <h3 class="title title--small">Design a lunchbox and win a family holiday with Secret Escapes plus £2000 shopping with Joules</h3>
+  <hr class="hr--center hr--margin">
+  <p class="p--large">Secret Escapes have partnered with Joules to ensure a summer packed with family fun. Enter this exclusive competition for a chance to win a £4000 luxury family holiday with Secret Escapes and £2000 to spend with Joules. All you have to do is get your talented little ones to create a lunchbox design. It really is that simple!</p>
+
+
+
+prizes:
+
+  - title: Holiday
+    content: >
+      <p>Share a taste of luxury with the whole family this summer. Win a getaway worth £4000 and treat your loved ones to only the finest holiday. Secret Escapes has long been busy curating a stellar selection of only the finest breaks available worldwide, with luxury at the heart of what we do. Expect only the finest. </p>
+
+  - title: Joules & BEAR
+    content: >
+      <p>You’ll also win £2000 to spend with Joules, to get the whole family kitted out in the colourful British style which they so carefully craft. On top of this, the winning design will stock the shelves of Joules shops, meaning your nipper’s creativity will be available nationwide! You’ll also get your own lunchbox full of healthy snacks courtesy of BEAR.</p>
+
+  - title: Runner up
+    content: >
+      <p>Even if you lose, you can still win! Five runners-up will receive a £100 Joules gift card plus a hamper full of BEAR goodies! From healthy snacks to fill your own lunchboxes, to colourful, vibrant British wear and home goods, coming second place needn’t be a bad thing!</p>
+
+
+outro: >
+  <p class="title p--lead">With so much up for grabs, it’s time to start those creative juices flowing! Inspire your little ones, set their imaginations free, and let them take you on a holiday to cherish for a lifetime!</p>
+
+
 ---
 
-<div class="background"></div>
+
+
+<div class="background js-bg-fade">
+  <div class="background__overlay js-bg-fade__overlay"></div>
+</div>
+
+
 
 <div class="intro">
-  <div class="row row--padding">
+
+  <div class="row row--padding title-banner">
+
     <div class="logos row align-center">
       <a class="logo logo--secret-escapes" href="https://www.secretescapes.com/"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/secret-escapes.png" alt="Secret Escapes logo"></a><a class="logo logo--partner"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/partner.png" alt="Partner Logo"></a>
     </div>
-    <div class="row row--padding">
-      <h1 class="title title--large">Design your luchbox image</h1>
-      <a href="#competition-link" class="btn btn--solid btn--large">Enter Now</a>
+
+    <div class="row">
+      <h1 class="title title--large">
+        <img src="{{site.baseurl}}/img/content/title.png" class="js-svg-swap title-banner__image" alt="Design a lunchbox and win a family holiday">
+      </h1>
+      <a href="#enter" class="btn btn--solid btn--large">Enter Now</a>
     </div>
   </div>
 </div>
+
+
+
+<div class="row">
+  <div class="page page--padding align-center">
+    <div class="row--padding">
+      {{ page.intro }}
+    </div>
+  </div>
+</div>
+
+
+
+<section>
+  <div class="row row--padding align-center invert-text">
+    <h2 class="title title--upper title--expanded title--large title--lined">
+      The Prize
+    </h2>
+  </div>
+</section>
+
+
 
 <div class="row">
   <div class="page">
-    <p class="row row--padding paragraph--lead align-center">Long description about the overall competition. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore voluptatem nesciunt accusantium eos aperiam excepturi, nisi consectetur illum laboriosam officia nobis molestiae neque? Voluptates harum quia veniam. Libero veniam neque suscipit delectus officia incidunt sint adipisci nihil. Assumenda quisquam, voluptates laboriosam, alias voluptas provident.</p>
-    <div class="row row--columns-8-4">
-      <div class="row__column">
-        <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/img-01.jpg');"></div>
+
+    {% for prize in page.prizes %}
+    <div class="harvey">
+
+      <div class="harvey__image bg-image-ratio bg-image-ratio--1-1" style="background-image: url('{{site.baseurl}}/img/content/{{prize.title | slugify}}.jpg');"></div>
+
+      <div class="harvey__text">
+        <h2 class="title title--smaller title--upper title--expanded">{{ prize.title }}</h2>
+        {{ prize.content }}
       </div>
-      <div class="row__column">
-        <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/img-02.jpg');"></div>
-        <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/img-03.jpg');"></div>
-      </div>
+
     </div>
-    <div class="row row--padding row--columns-6-6-gutters">
-      <div class="row__column">
-        <h2 class="title title--medium">Lunch box info</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quod voluptatem eius ratione obcaecati, numquam fugit provident saepe sit, delectus, omnis error deleniti labore quisquam? Ullam exercitationem libero fugiat. Voluptas!</p>
-      </div>
-      <div class="row__column">
-        <h2 class="title title--medium">Joules product info</h2>
-        <p>Tempore doloribus id nihil corporis possimus, quod assumenda beatae natus aspernatur, accusantium, laboriosam, labore nesciunt vitae consectetur quas itaque eveniet. Ipsam, voluptate eos? Maxime, quo. Tempora tempore beatae consequatur sint?</p>
-      </div>
-    </div>
-    <div class="row row--padding">
-      <p>joules product grid</p>
-    </div>
+    {% endfor %}
+
   </div>
 </div>
 
-<div class="footer align-center">
-  <div class="row row--padding row--padding-vertical invert-text">
-    <p>© Copyright <span class="js-year">2016</span> Secret Escapes</p>
+
+
+<section id="enter" class="enter-section">
+
+  <div class="row row--padding align-center">
+    <a href="{{ site.campaign-link }}">
+      <img src="{{site.baseurl}}/img/content/lunchbox.gif" alt="">
+    </a>
   </div>
-</div>
+
+  <div class="row row--padding align-center">
+    {{ page.outro }}
+    <a href="{{ site.campaign-link }}" class="btn btn--solid btn--large">Start designing</a>
+  </div>
+
+</section>
+
+
+
+<section class="bg--joules">
+  <div class="row row--padding align-center">
+
+    <h4 class="title title--medium">Discover your Joules holiday look</h4>
+    <p class="p--lead">British brand Joules are known for their colourful prints and bright wellies with something to offer for the whole family. With gift cards to be won, be inspired by their bright and fun collection, whatever the weather.</p>
+    <a href="#" class="btn btn--solid btn--secondary">Shop with Joules</a>
+
+  </div>
+</section>

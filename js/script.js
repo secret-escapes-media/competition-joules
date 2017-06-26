@@ -63,5 +63,41 @@
   $(document).scroll(function(){ enterbar(); });
 
 
+
+///////////////////////////////////////
+//       Background overlay fade
+///////////////////////////////////////
+
+function overlay_bg(){
+	var st = $(document).scrollTop();
+	var wh = $(window).height();
+
+  $('.js-bg-fade').each(function(){
+
+    var distance = $('.intro').height(); // 0
+    var progress = -(st/distance)+1; // scrolltop - wh
+
+    $(this).find('.js-bg-fade__overlay').css({
+      "opacity": progress
+    });
+
+  });
+
+}
+
+$(document).scroll(function() {
+	overlay_bg();
+});
+
+$(document).scroll(function() {
+	var st = $(document).scrollTop();
+	var wh = $(window).height();
+
+	$('.title-banner__overlay').css({
+    "opacity": st / (wh*1.5) + 0.15
+	});
+});
+
+
 ///////////////////////////////////////////////////////////////////////////////
 });})(jQuery, this); // on ready end

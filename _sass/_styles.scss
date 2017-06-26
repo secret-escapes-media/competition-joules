@@ -1,9 +1,30 @@
 // all custom styles for the site
 
+.footer {
+  padding: $margin 0;
+  background-color: $dark-grey;
+  &__logos {
+    > * {
+      vertical-align: middle;
+      line-height: 0;
+    }
+  }
+  .logo {
+    padding: 0.75em;
+    @include bp(medium){
+      padding: 1em 1.25em;
+    }
+  }
+  .logo--secret-escapes > img { max-width: 120px; }
+  .logo--partner > img { max-width: 70px; }
+}
 
 // ---------- Section styles ----------
 
-.invert-text { color: $white; }
+.invert-text {
+  color: $white;
+  .title { color: $white;  }
+}
 .bg {
   &--white      { background-color: $white; }
   &--black      { background-color: $black; }
@@ -17,6 +38,11 @@
   &--se-dark-grey  { background-color: $se-dark-grey; }
   &--partner-primary   { background-color: $partner-primary; }
   &--partner-secondary { background-color: $partner-secondary; }
+
+  &--joules   { background-color: $joules; }
+  &--joules-red   { background-color: $joules-red; }
+  &--joules-blue   { background-color: $joules-blue; }
+  &--joules-pink   { background-color: $joules-pink; }
 }
 
 // ---------- button ----------
@@ -37,14 +63,26 @@
     text-decoration: none;
   }
   * + & { margin-top: 1em; }
+  & + * { margin-top: 2em; }
 
   &--solid {
     color: white;
     border: 0;
-    background-color: $partner-primary;
-    &:hover { background-color: darken($partner-primary, 10); }
-   }
+    background-color: $partner-secondary;
+    &:hover { background-color: darken($partner-secondary, 10); }
+  }
   &--large { font-size: 1.2em; padding: .5em 3em; }
+  &--secondary {
+    background-color: $joules-pink;
+    &:hover { background-color: darken($joules-pink, 10); }
+  }
+
+  &--invert {
+    color: $partner-secondary;
+    border: 0;
+    background-color: rgba($white,0.8);
+    &:hover { background-color: $white; }
+  }
 }
 
 
@@ -60,6 +98,14 @@
   background: $se-dark-grey center no-repeat;
   background-image: url('../img/bg/bg.jpg');
   background-size: cover;
+
+  &__overlay {
+    position: absolute;
+    z-index: $z-content;
+    top:0;bottom:0;left:0;right:0;
+    opacity: 1;
+    background-color: rgba($joules-dark-blue,0.6);
+  }
 }
 
 .logos {
@@ -99,17 +145,17 @@
 }
 
 .page {
-  padding: $margin 0;
   background-color: $white;
-  box-shadow: 0px 0px 42.4px 10.6px rgba(0, 0, 0, 0.1);
-  @include bp(large){
-    padding: ($margin*1.2) 0;
-  }
-  @include bp(xxlarge){
-    margin-bottom: ($margin*2);
-  }
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
   @include bp(xxxlarge){
     border-radius: 4px;
+    overflow: hidden;
+  }
+  &--padding {
+    padding: $margin 0;
+    @include bp(large){
+      padding: ($margin*1.2) 0;
+    }
   }
 }
 
@@ -163,14 +209,14 @@
   &--secret-escapes{
     margin-top: 4px;
     > img {
-      max-width: 80px;
+      max-width: 100px;
       @include bp(medium){ max-width: 120px; }
       @include bp(xxxlarge){ max-width: 140px; }
     }
   }
   &--partner{
     > img {
-      max-width: 55px;
+      max-width: 80px;
       @include bp(medium){ max-width: 90px; }
       @include bp(xxxlarge){ max-width: 100px; }
     }
@@ -178,23 +224,25 @@
 }
 
 
-// ---------- prize number ----------
 
-.prize {
-  &__number {
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: $black-85;
-    color: #ffffff;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    font-family: 'Cormorant Garamond';
-    line-height: 100%;
-    vertical-align: middle;
-    padding: 12px 0;
-    font-size: 1.4em;
-    & .num { font-size: 3em; }
+.title-banner {
+
+  &__image {
+    width: 720px;
+    margin-bottom: 0.5em;
+  }
+
+}
+
+
+
+.enter-section {
+  padding-top: 6em;
+  margin-top: -3em;
+  background-image: url(../img/bg/bg-pattern.jpg);
+  & img {
+    max-width: 320px;
+    width: 80%;
+    margin-right: 5%;
   }
 }
