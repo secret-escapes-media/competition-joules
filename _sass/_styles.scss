@@ -42,7 +42,9 @@
   &--joules   { background-color: $joules; }
   &--joules-red   { background-color: $joules-red; }
   &--joules-blue   { background-color: $joules-blue; }
+  &--joules-dark-blue   { background-color: $joules-dark-blue; }
   &--joules-pink   { background-color: $joules-pink; }
+  &--pattern   { background-image: url('../img/bg/bg-pattern.jpg'); }
 }
 
 // ---------- button ----------
@@ -129,19 +131,13 @@
 }
 
 .intro {
-  height: 600px;
   padding-top: 50px;
+  padding-bottom: 50px;
   color: $white;
   text-align: center;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  .flexbox & {
-    display: flex;
-    justify-content: flex-start;
-    height: 70%;
-    padding-top: 0;
-  }
 }
 
 .page {
@@ -228,7 +224,7 @@
 .title-banner {
 
   &__image {
-    width: 720px;
+    width: 620px;
     margin-bottom: 0.5em;
   }
 
@@ -239,7 +235,6 @@
 .enter-section {
   padding-top: 6em;
   margin-top: -3em;
-  background-image: url(../img/bg/bg-pattern.jpg);
   & img {
     max-width: 320px;
     width: 80%;

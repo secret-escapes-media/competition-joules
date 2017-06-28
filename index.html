@@ -5,9 +5,8 @@ title: Design a lunchbox and win a family holiday!
 
 
 intro: >
-  <h3 class="title title--small">Design a lunchbox and win a family holiday with Secret Escapes plus £2000 shopping with Joules</h3>
-  <hr class="hr--center hr--margin">
-  <p class="p--large">Secret Escapes have partnered with Joules to ensure a summer packed with family fun. Enter this exclusive competition for a chance to win a £4000 luxury family holiday with Secret Escapes and £2000 to spend with Joules. All you have to do is get your talented little ones to create a lunchbox design. It really is that simple!</p>
+  <p class="p--bold p--color p--large">Secret Escapes have partnered with Joules to ensure a summer packed with family fun. Enter this exclusive competition for a chance to win a £4,000 luxury family holiday with Secret Escapes and £2,000 to spend with Joules. All you have to do is get your talented little ones to create a lunchbox design. It really is that simple!</p>
+  <p class="p--bold p--color p--large">Hurry, competition ends Sunday 3rd September!</p>
 
 
 
@@ -15,19 +14,19 @@ prizes:
 
   - title: Holiday
     content: >
-      <p>Share a taste of luxury with the whole family this summer. Win a getaway worth £4000 and treat your loved ones to only the finest holiday. Secret Escapes has long been busy curating a stellar selection of only the finest breaks available worldwide, with luxury at the heart of what we do. Expect only the finest. </p>
+      <p>Share a taste of luxury with the whole family this summer. Win a getaway worth £4,000 and treat your loved ones to only the finest holiday. Secret Escapes has long been busy curating a stellar selection of only the finest breaks available worldwide, with luxury at the heart of what we do. Expect only the finest.</p>
 
-  - title: Joules & BEAR
+  - title: Joules
     content: >
-      <p>You’ll also win £2000 to spend with Joules, to get the whole family kitted out in the colourful British style which they so carefully craft. On top of this, the winning design will stock the shelves of Joules shops, meaning your nipper’s creativity will be available nationwide! You’ll also get your own lunchbox full of healthy snacks courtesy of BEAR.</p>
+      <p>You’ll also win £2,000 to spend with Joules, to get the whole family kitted out in the colourful British style they so carefully craft. On top of this, the winning design will be sold at joules.com, meaning your nipper’s creativity will be available to buy nationwide! You’ll also receive a lunchbox full of BEAR Nibbles.</p>
 
-  - title: Runner up
+  - title: Runners-up
     content: >
-      <p>Even if you lose, you can still win! Five runners-up will receive a £100 Joules gift card plus a hamper full of BEAR goodies! From healthy snacks to fill your own lunchboxes, to colourful, vibrant British wear and home goods, coming second place needn’t be a bad thing!</p>
+      <p>Even if you lose, you can still win! Five runners-up will receive a £100 Joules gift card plus a hamper full of BEAR Nibbles! From colourful, vibrant, British clothing and healthy snacks to fill your family’s lunchboxes, coming second place needn’t be a bad thing!</p>
 
 
 outro: >
-  <p class="title p--lead">With so much up for grabs, it’s time to start those creative juices flowing! Inspire your little ones, set their imaginations free, and let them take you on a holiday to cherish for a lifetime!</p>
+  <p class="p--bold p--large">With so much up for grabs, it’s time to get those creative juices flowing! Inspire your little ones, set their imaginations free, and let them take you on a holiday to cherish for a lifetime!</p>
 
 
 ---
@@ -45,14 +44,15 @@ outro: >
   <div class="row row--padding title-banner">
 
     <div class="logos row align-center">
-      <a class="logo logo--secret-escapes" href="https://www.secretescapes.com/"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/secret-escapes.png" alt="Secret Escapes logo"></a><a class="logo logo--partner"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/partner.png" alt="Partner Logo"></a>
+      <a class="logo logo--secret-escapes" target="_blank" href="https://www.secretescapes.com/"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/secret-escapes.png" alt="Secret Escapes logo"></a><a target="_blank" href="{{ site.joules-link }}" class="logo logo--partner"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/partner.png" alt="Partner Logo"></a>
     </div>
 
     <div class="row">
       <h1 class="title title--large">
-        <img src="{{site.baseurl}}/img/content/title.png" class="js-svg-swap title-banner__image" alt="Design a lunchbox and win a family holiday">
+        <a href="{{ site.campaign-link }}">
+          <img src="{{site.baseurl}}/img/content/title.png" class="js-svg-swap title-banner__image" alt="Design a lunchbox and win a family holiday">
+        </a>
       </h1>
-      <a href="#enter" class="btn btn--solid btn--large">Enter Now</a>
     </div>
   </div>
 </div>
@@ -60,9 +60,20 @@ outro: >
 
 
 <div class="row">
-  <div class="page page--padding align-center">
-    <div class="row--padding">
-      {{ page.intro }}
+  <div class="page page--padding bg--pattern">
+    <div class="row--padding row--columns-4-8-gutters row--columns-vertical-align">
+
+      <div class="row__column">
+        <a href="{{ site.campaign-link }}">
+          <img src="{{site.baseurl}}/img/content/lunchbox.gif" alt="">
+        </a>
+      </div>
+
+      <div class="row__column">
+        {{ page.intro }}
+        <a href="{{ site.campaign-link }}" class="btn btn--solid btn--large">Enter Now</a>
+      </div>
+
     </div>
   </div>
 </div>
@@ -85,7 +96,7 @@ outro: >
     {% for prize in page.prizes %}
     <div class="harvey">
 
-      <div class="harvey__image bg-image-ratio bg-image-ratio--1-1" style="background-image: url('{{site.baseurl}}/img/content/{{prize.title | slugify}}.jpg');"></div>
+      <a href="{{ site.campaign-link }}" class="harvey__image bg-image-ratio bg-image-ratio--1-1" style="background-image: url('{{site.baseurl}}/img/content/{{prize.title | slugify}}.jpg');"></a>
 
       <div class="harvey__text">
         <h2 class="title title--smaller title--upper title--expanded">{{ prize.title }}</h2>
@@ -100,16 +111,10 @@ outro: >
 
 
 
-<section id="enter" class="enter-section">
+<section id="enter" class="enter-section bg--joules-dark-blue">
 
-  <div class="row row--padding align-center">
-    <a href="{{ site.campaign-link }}">
-      <img src="{{site.baseurl}}/img/content/lunchbox.gif" alt="">
-    </a>
-  </div>
-
-  <div class="row row--padding align-center">
-    {{ page.outro }}
+  <div class="row row--padding align-center invert-text">
+    {{page.outro}}
     <a href="{{ site.campaign-link }}" class="btn btn--solid btn--large">Start designing</a>
   </div>
 
@@ -122,7 +127,7 @@ outro: >
 
     <h4 class="title title--medium">Discover your Joules holiday look</h4>
     <p class="p--lead">British brand Joules are known for their colourful prints and bright wellies with something to offer for the whole family. With gift cards to be won, be inspired by their bright and fun collection, whatever the weather.</p>
-    <a href="#" class="btn btn--solid btn--secondary">Shop with Joules</a>
+    <a href="{{ site.joules-link }}" class="btn btn--solid btn--large">Shop with Joules</a>
 
   </div>
 </section>

@@ -9,4 +9,5 @@ url: "http://mp.secretescapes.com" # the base hostname & protocol for your site
 markdown: kramdown
 exclude: [node_modules, gulpfile.js, package-lock.json, package.json, bower_components, bower.json, README.md]
 
-campaign-link: link
+campaign-link: https://www.joules.com/win?utm_source=acquisition&utm_medium=partnerships&utm_campaign=secret-escapes&mch=acquisition&mcpt=partnerships&mcpn=secret-escapes
+joules-link: https://www.joules.com/?utm_source=acquisition&utm_medium=partnerships&utm_campaign=secret-escapes&mch=acquisition&mcpt=partnerships&mcpn=secret-escapes

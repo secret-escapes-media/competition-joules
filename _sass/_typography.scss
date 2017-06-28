@@ -90,6 +90,7 @@ input, textarea, keygen, select, button {
 }
 
 .p {
+  &--color { color: $text-heading; }
   &--bold { font-weight: 600; }
   &--lead {
     font-size: 1.1em;
