@@ -188,7 +188,6 @@
 @media (max-height:650px) {
   .intro,
   .flexbox .intro {
-    height: 550px;
     padding-top: 25px;
   }
   .background,
@@ -228,6 +227,27 @@
     margin-bottom: 0.5em;
   }
 
+}
+
+
+
+
+.intro-section {
+
+  text-align: center;
+  @include bp(large){
+    text-align: left;
+  }
+
+  &__image {
+    img {
+      max-width: 200px; width: 70%;
+      @include bp(large) {
+        max-width: 260px; width: 100%;
+      }
+    }
+  }
+  &__content{ }
 }
 
 

@@ -44,12 +44,12 @@ outro: >
   <div class="row row--padding title-banner">
 
     <div class="logos row align-center">
-      <a class="logo logo--secret-escapes" target="_blank" href="https://www.secretescapes.com/"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/secret-escapes.png" alt="Secret Escapes logo"></a><a target="_blank" href="{{ site.joules-link }}" class="logo logo--partner"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/partner.png" alt="Partner Logo"></a>
+      <a class="logo logo--secret-escapes" target="_blank" href="https://www.secretescapes.com/"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/secret-escapes.png" alt="Secret Escapes logo"></a><a target="_blank" id="tracking-joules-logo" href="{{ site.joules-link }}" class="logo logo--partner"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/partner.png" alt="Partner Logo"></a>
     </div>
 
     <div class="row">
       <h1 class="title title--large">
-        <a href="{{ site.campaign-link }}">
+        <a href="{{ site.campaign-link }}" id="tracking-banner-image">
           <img src="{{site.baseurl}}/img/content/title.png" class="js-svg-swap title-banner__image" alt="Design a lunchbox and win a family holiday">
         </a>
       </h1>
@@ -60,18 +60,18 @@ outro: >
 
 
 <div class="row">
-  <div class="page page--padding bg--pattern">
+  <div class="page page--padding bg--pattern intro-section">
     <div class="row--padding row--columns-4-8-gutters row--columns-vertical-align">
 
-      <div class="row__column">
-        <a href="{{ site.campaign-link }}">
+      <div class="row__column intro-section__image">
+        <a href="{{ site.campaign-link }}" id="tracking-lunchbox">
           <img src="{{site.baseurl}}/img/content/lunchbox.gif" alt="">
         </a>
       </div>
 
-      <div class="row__column">
+      <div class="row__column intro-section__content">
         {{ page.intro }}
-        <a href="{{ site.campaign-link }}" class="btn btn--solid btn--large">Enter Now</a>
+        <a href="{{ site.campaign-link }}" id="tracking-intro-enterbutton" class="btn btn--solid btn--large">Enter Now</a>
       </div>
 
     </div>
@@ -96,7 +96,7 @@ outro: >
     {% for prize in page.prizes %}
     <div class="harvey">
 
-      <a href="{{ site.campaign-link }}" class="harvey__image bg-image-ratio bg-image-ratio--1-1" style="background-image: url('{{site.baseurl}}/img/content/{{prize.title | slugify}}.jpg');"></a>
+      <a href="{{ site.campaign-link }}" id="tracking-prize-{{prize.title | slugify}}" class="harvey__image bg-image-ratio bg-image-ratio--1-1" style="background-image: url('{{site.baseurl}}/img/content/{{prize.title | slugify}}.jpg');"></a>
 
       <div class="harvey__text">
         <h2 class="title title--smaller title--upper title--expanded">{{ prize.title }}</h2>
@@ -115,7 +115,7 @@ outro: >
 
   <div class="row row--padding align-center invert-text">
     {{page.outro}}
-    <a href="{{ site.campaign-link }}" class="btn btn--solid btn--large">Start designing</a>
+    <a href="{{ site.campaign-link }}" id="tracking-outro-enterbutton" class="btn btn--solid btn--large">Start designing</a>
   </div>
 
 </section>
@@ -127,7 +127,7 @@ outro: >
 
     <h4 class="title title--medium">Discover your Joules holiday look</h4>
     <p class="p--lead">British brand Joules are known for their colourful prints and bright wellies with something to offer for the whole family. With gift cards to be won, be inspired by their bright and fun collection, whatever the weather.</p>
-    <a href="{{ site.joules-link }}" class="btn btn--solid btn--large">Shop with Joules</a>
+    <a href="{{ site.joules-link }}" id="tracking-joules-shopbutton" class="btn btn--solid btn--large">Shop with Joules</a>
 
   </div>
 </section>

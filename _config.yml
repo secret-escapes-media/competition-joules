@@ -1,7 +1,7 @@
 # Site settings
 title: Joules
 description: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Enter this exclusive competition for a chance to win a £4,000 luxury family holiday with Secret Escapes and £2,000 to spend with Joules.
 baseurl: "/joules" # the subpath of your site, e.g. /blog/
 url: "http://mp.secretescapes.com" # the base hostname & protocol for your site
 
